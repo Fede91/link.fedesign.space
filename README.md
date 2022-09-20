@@ -1,54 +1,59 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+## Example of Card Layout
 
-## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+```
+{
+  "title": "Resources",
+  "layout": "card",
+  "items": [
+    {
+      "title": "Dribbble",
+      "img": "https://cdn.dribbble.com/users/12786105/screenshots/19118413/media/ce1c0c2c96a36061ae93b6f7a2473309.png?compress=1&resize=1600x1200&vertical=top",
+      "url": "https://www.figma.com/community/widget/1149872275457395522",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cta": "Discover"
+    },
+    {
+      "title": "Dribbble",
+      "img": "",
+      "url": "",
+      "cta": "Get a copy"
+    },
+    {
+      "title": "Dribbble",
+      "img": "",
+      "url": "",
+      "cta": "Download"
+    },
+    {
+      "title": "Dribbble",
+      "img": "",
+      "url": "",
+      "cta": "Download"
+    },
+    {
+      "title": "Dribbble",
+      "img": "",
+      "url": "",
+      "cta": "Download"
+    },
+    {
+      "title": "Dribbble",
+      "img": "",
+      "url": "",
+      "cta": "Download"
+    },
+    {
+      "title": "Dribbble",
+      "img": "",
+      "url": "",
+      "cta": "Download"
+    },
+    {
+      "title": "Dribbble",
+      "img": "",
+      "url": "",
+      "cta": "Download"
+    }
+  ]
+},
+```
