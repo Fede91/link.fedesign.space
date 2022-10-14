@@ -9,6 +9,7 @@ const config: GatsbyConfig = {
   },
   graphqlTypegen: true,
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: "@chakra-ui/gatsby-plugin",
       options: {
