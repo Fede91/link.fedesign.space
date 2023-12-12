@@ -1,76 +1,54 @@
-## Example of Card Layout
+# Astro Starter Kit: Basics
 
-```
-{
-  "title": "Resources",
-  "layout": "card",
-  "items": [
-    {
-      "title": "Dribbble",
-      "img": "https://cdn.dribbble.com/users/12786105/screenshots/19118413/media/ce1c0c2c96a36061ae93b6f7a2473309.png?compress=1&resize=1600x1200&vertical=top",
-      "url": "https://www.figma.com/community/widget/1149872275457395522",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "cta": "Discover"
-    },
-    {
-      "title": "Dribbble",
-      "img": "",
-      "url": "",
-      "cta": "Get a copy"
-    },
-    {
-      "title": "Dribbble",
-      "img": "",
-      "url": "",
-      "cta": "Download"
-    },
-    {
-      "title": "Dribbble",
-      "img": "",
-      "url": "",
-      "cta": "Download"
-    },
-    {
-      "title": "Dribbble",
-      "img": "",
-      "url": "",
-      "cta": "Download"
-    },
-    {
-      "title": "Dribbble",
-      "img": "",
-      "url": "",
-      "cta": "Download"
-    },
-    {
-      "title": "Dribbble",
-      "img": "",
-      "url": "",
-      "cta": "Download"
-    },
-    {
-      "title": "Dribbble",
-      "img": "",
-      "url": "",
-      "cta": "Download"
-    }
-  ]
-},
+```sh
+npm create astro@latest -- --template basics
 ```
 
-## Example of Row Layout
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
-{
-      "title": "My apps & websites",
-      "layout": "row",
-      "items": [
-        {
-          "title": "fedesign.space",
-          "imgIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAYCAYAAAD3Va0xAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKMSURBVHgBjVS7jtpAFJ0xRkoX0iPCHywdCCHFJVRJvmBJmWqzXwD8AAkSH0AkqCjWdEig4BRUSDy+AC+ioYobGl7OucOdaNZh2R3peOyZe8+c+xhLERlhGCYw3QEOkAHeAtI02W63cr1ei263KyaTidjtdl/sCAkRVAEiCyMEpp3o9XpiPB6r99PpJGxjs4KpYjhLgyw0iaBIjEYjRUKgYTNJmZWYIwDcS4rm83kaPs5/RKxEcbKCBhFLKYNLRMVi0UE4H8gWRCHshM1q0kY4LWx8E1fG4XD49048OkcfI3Y1ejiOk4jH4+lYLEaV8wn9ft83CDSUIpI2w/oNq/FKpVINGxWsK+l0Gg3M5PAIVFHuR8uyRjo/x+OxTIoy+pRms3kDw5E+SRsap1OSWyAJjDUVns0JFvV6XQ4Gg3fsrBTTgxRJ0n5OrK5SgvtHFQcjVFXrdDpE8uQEwIOBCyyY+ZZLnjaUqh5DaNLebDay3W6LiNTqcDisRYrgoQBE8gBkDHWqgS3XdaMktQskZybP86HwM2wCnUMChWZNp9MnROiRlrgyiAyhNDh85UOhWcvlUl06AuWFDMXLw9WV1e1h6xeu9WtI6NBAu1BBEcUfi+PVoWXE64aunORGDYhoTh/cF5l8Pv8iGbeCzpHc7/cLInJ5UW3gbn2/RpLL5aiXykYUHn4rgYW9n4BvbDiFQmEEh3SUJJvN3qFCD9qWO1u1imomODqYfgnjGnCf/AZ8cU7wJ8FXg8Mj/ED73NN3jB6r1cpPpVKUOMdsf+A9F4A6+Q0fFPLVaIHkq1Yb0y8g85LJ5AJGOT45NHOnqxSef2TV2Wx2b4Ytn0koJfOWqog5wS3iY8vFWoOSG/X5C8Agfr+5L9WAAAAAAElFTkSuQmCC",
-          "style": "primary",
-          "url": "https://fedesign.space/"
-        }
-      ]
-    },
-```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
