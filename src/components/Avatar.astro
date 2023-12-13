@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import photo from '../assets/images/me.webp';
+
+interface Props {
+    className?: string;
+}
+
+const { className } = Astro.props;
+
+---
+
+<div class:list={[className, "avatar"]} >
+    <Image class="profile-photo" src={photo} alt="@me"/>
+</div>
+
+<style>
+    .avatar {
+        border-radius: 50%;
+        height: 10rem;
+        width: 10rem;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .profile-photo {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: grayscale(100%);
+    }
+
+    @media all and (min-width: 768px) {
+        .avatar {
+            height: 100%;
+            width: auto;
+        }
+    }
+</style>

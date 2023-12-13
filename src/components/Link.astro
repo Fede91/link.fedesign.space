@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    class?: string;
+    icon?: string;
+    title?: string;
+    text: string | null;
+    href: string;
+    target?: string;
+    style?: string;
+}
+
+const {class: className, icon, text,  style, title, ...rest} = Astro.props;
+const images = import.meta.glob('/src/assets/icons/*.{jpeg,jpg,png,gif,svg}');
+
+---
+
+<a class:list={[className, "link", style]} target="_blank" {...rest}>
+    {icon && images[`/src/assets/icons/${icon}.svg`]
+      // @ts-ignore
+      ? <Image class="link__icon" src={images[`/src/assets/icons/${icon}.svg`]()} alt={title || text} />
+      : null
+    }
+    <div class="link__content">
+        {title ? <div class="text-accent">{title}</div> : null}
+        {text ? <div>{text}</div> : null}
+    </div>
+</a>
+
+
+<style>
+    .link {
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+        font-size: 0.875rem;
+        margin-bottom: 4px;
+    }
+
+    .link.primary {
+        border: 1px solid var(--border-color);
+        
+    }
+
+    .link.secondary {
+        background-color: var(--secondary-background-color);
+    }
+
+    .link_text {
+        padding-left: 1rem;
+    }
+    .link__content {
+        flex-grow: 1;
+        padding-left: 1rem;
+    }
+
+    @media all and (min-width: 768px) {
+        .link {
+            margin-bottom: 12px;
+        }
+    }
+</style>

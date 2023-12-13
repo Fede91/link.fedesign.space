@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+import data from '../data/data.json';
+import Layout from '../layouts/Layout.astro';
+import Avatar from '../components/Avatar.astro';
+import Section from '../components/Section.astro';
+import Grain from '../components/Grain.astro';
+import Footer from '../components/Footer.astro';
+import sloganImg from '../assets/images/my-slogan.svg';
+---
+
+<Layout title={data.site.title}>
+	<main>
+		<section class="hero_container">
+			<div class="hero-img">
+				<Avatar />
+			</div>
+			<div class="hero-tile hero-quote" >
+				<Image  src={sloganImg} alt="Motto"/>
+				<div class="hero-text" >
+					<span class="text-accent">K</span>eep<br/>
+					<span class="text-accent">I</span>t<br/>
+					<span class="text-accent">S</span>imple
+				</div>
+			</div>
+			<div class="hero-tile me">
+				<h1><span class="text-accent">Fede</span>rico</h1>
+				<h3>{data.hero.bio}</h3>
+			</div>
+		</section>
+		
+
+		
+
+		{
+			data.sections.map((section) => (
+				// @ts-ignore
+				<Section title={section.title} layout={section.layout} items={section.items} />
+			))
+		}
+		<Footer />
+	</main>
+	
+	<Grain />
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+	}
+
+	.hero-tile {
+		display: flex;
+        flex-direction: column;
+        justify-content: center;
+	}
+
+	.me {
+		margin-top: 4px;
+		padding: 1rem;
+		border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+
+		grid-column: 1 / span 2;
+        grid-row: 2 / span 2;
+	}
+
+	.hero-text {
+		font-size: calc(14px + 4vmin);
+		margin-left: 0.5rem;
+	}
+
+	.hero-quote {
+		display: flex;
+		flex-grow: 1;
+		flex-direction: row;
+        background-color: var(--secondary-background-color);
+        border-radius: var(--border-radius);
+		align-items: center;
+		margin-left: 4px;
+    }
+
+	.hero-quote img {
+		width: auto;
+		height: 6rem;
+	}
+
+	.hero_container {
+		display: grid;
+		gap: 4px;
+		grid-template-columns: 10rem auto;
+	}
+
+	.section_container.card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media all and (min-width: 768px) {
+		.hero_container {
+			display: grid;
+			grid-template-columns: auto auto;
+			gap: 12px;
+		}
+
+		.me {
+			grid-column: 1 / span 1;
+			grid-row: 1 / span 1;
+		}
+
+		.hero-quote {
+			grid-column: 1 / span 1;
+			grid-row: 2 / span 1;
+		}
+
+		.hero-img {
+			grid-column: 2 / span 1;
+			grid-row: 1 / span 2;
+		}
+	}
+</style>

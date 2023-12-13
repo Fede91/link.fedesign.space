@@ -1,0 +1,89 @@
+---
+import Item from './Item.astro';
+
+interface Props {
+    title: string;
+    layout: string;
+    items: Array<{
+        title: string;
+        url: string;
+        img?: string;
+        type?: string;
+        style?: string;
+        description?: string;
+        icon?: string;
+        alias?: string;
+        text: string | null;
+    }>;
+}
+
+const {title, layout, items} = Astro.props;
+---
+
+<section  class:list={['section_container', layout]} >
+    <h2>{title}</h2>
+    <div class:list={['section_content', layout]}>
+        {
+            layout === 'card' ? (
+                <div class:list={['section_wrapper', layout]}>
+                    {
+                        items.map((item) => (
+                            <Item {...item}  />
+                        ))
+                    }
+                </div>
+            ) : items.map((item) => (
+                <Item {...item}  />
+            ))
+        }
+    </div>
+</section>
+
+<style>
+
+    .section_container {
+        margin-top: 2rem;
+    }
+
+    .section_content {
+        margin-top: 0.8rem;
+    }
+
+    .section_content.grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+    }
+
+    .section_content.card {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: scroll;
+        width: 100%;
+    }
+
+    .section_wrapper.card {
+        padding: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    @media all and (min-width: 768px) {
+
+        .section_content.card {
+            overflow-x: initial;
+        }
+
+        .section_wrapper.card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .section_content.grid {
+            gap: 12px;
+        }
+    }
+
+</style>

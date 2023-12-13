@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    class?: string;
+    icon?: string;
+    title: string | null;
+    alias?: string;
+    href: string;
+    target?: string;
+    style?: string;
+}
+
+const {class: className, icon, title, alias,  style, ...rest} = Astro.props;
+const images = import.meta.glob('/src/assets/icons/*.{jpeg,jpg,png,gif,svg}');
+
+---
+<a class:list={[className, "social-card", style]} target="_blank" {...rest}>
+    {icon && images[`/src/assets/icons/${icon}.svg`]
+      // @ts-ignore
+      ? <Image class="social-card__icon" src={images[`/src/assets/icons/${icon}.svg`]()} alt={title} />
+      : null
+    }
+    <div class="social-card__content">
+        <div class="social-card__title text-accent">{title}</div>
+        {alias ? <div class="social-card__alias">{alias}</div> : null}
+    </div>
+</a>
+
+
+<style>
+    .social-card {
+        background-color: var(--secondary-background-color);
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+        font-size: 0.875rem;
+    }
+
+    .social-card .social-card__content {
+        flex-grow: 1;
+        padding-left: 1rem;
+    }
+</style>
