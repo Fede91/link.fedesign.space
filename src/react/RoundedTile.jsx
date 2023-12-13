@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import "./RoundedTile.css";
 
 export function RoundedTile(props) {
-  const { radius = 20, fill, stroke, style, variant = "card" } = props;
+  const { radius = 20, fill, stroke, variant = "card" } = props;
 
   const ref = useRef(null);
   const [dimensions, setDimensions] = useState({

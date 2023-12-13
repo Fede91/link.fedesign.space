@@ -16,7 +16,11 @@ const images = import.meta.glob('/src/assets/icons/*.{jpeg,jpg,png,gif,svg}');
 
 ---
 <a class:list={[className, "social-card", style]} target="_blank" {...rest}>
-    {icon && images[`/src/assets/icons/${icon}.svg`] ? <Image class="social-card__icon" src={images[`/src/assets/icons/${icon}.svg`]()} alt={title} /> : null}
+    {icon && images[`/src/assets/icons/${icon}.svg`]
+      // @ts-ignore
+      ? <Image class="social-card__icon" src={images[`/src/assets/icons/${icon}.svg`]()} alt={title} />
+      : null
+    }
     <div class="social-card__content">
         <div class="social-card__title text-accent">{title}</div>
         {alias ? <div class="social-card__alias">{alias}</div> : null}

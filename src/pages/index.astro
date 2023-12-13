@@ -34,6 +34,7 @@ import sloganImg from '../assets/images/my-slogan.svg';
 
 		{
 			data.sections.map((section) => (
+				// @ts-ignore
 				<Section title={section.title} layout={section.layout} items={section.items} />
 			))
 		}

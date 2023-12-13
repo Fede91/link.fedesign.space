@@ -11,6 +11,9 @@ interface Props {
         type?: string;
         style?: string;
         description?: string;
+        icon?: string;
+        alias?: string;
+        text: string | null;
     }>;
 }
 
@@ -24,12 +27,12 @@ const {title, layout, items} = Astro.props;
             layout === 'card' ? (
                 <div class:list={['section_wrapper', layout]}>
                     {
-                        items.map((item, index) => (
+                        items.map((item) => (
                             <Item {...item}  />
                         ))
                     }
                 </div>
-            ) : items.map((item, index) => (
+            ) : items.map((item) => (
                 <Item {...item}  />
             ))
         }
