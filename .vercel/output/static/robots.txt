@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://link.fedesign.space/sitemap-index.xml
