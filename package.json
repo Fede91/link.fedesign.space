@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.3.2",
     "@astrojs/react": "^3.0.7",
     "@astrojs/sitemap": "^3.0.3",
+    "@astrojs/vercel": "^6.0.2",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "astro": "^4.0.4",
