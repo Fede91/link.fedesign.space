@@ -1,14 +1,21 @@
 ---
 import { Image } from 'astro:assets';
 import photo from '../assets/images/me.webp';
+
+interface Props {
+    className?: string;
+}
+
+const { className } = Astro.props;
+
 ---
 
-<div class="hero-img" >
+<div class:list={[className, "avatar"]} >
     <Image class="profile-photo" src={photo} alt="@me"/>
 </div>
 
 <style>
-    .hero-img {
+    .avatar {
         border-radius: 50%;
         height: 10rem;
         width: 10rem;
@@ -21,5 +28,12 @@ import photo from '../assets/images/me.webp';
         width: 100%;
         object-fit: cover;
         filter: grayscale(100%);
+    }
+
+    @media all and (min-width: 768px) {
+        .avatar {
+            height: 100%;
+            width: auto;
+        }
     }
 </style>

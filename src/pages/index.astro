@@ -12,7 +12,9 @@ import sloganImg from '../assets/images/my-slogan.svg';
 <Layout title={data.site.title}>
 	<main>
 		<section class="hero_container">
-			<Avatar />
+			<div class="hero-img">
+				<Avatar />
+			</div>
 			<div class="hero-tile hero-quote" >
 				<Image  src={sloganImg} alt="Motto"/>
 				<div class="hero-text" >
@@ -21,11 +23,12 @@ import sloganImg from '../assets/images/my-slogan.svg';
 					<span class="text-accent">S</span>imple
 				</div>
 			</div>
+			<div class="hero-tile me">
+				<h1><span class="text-accent">Fede</span>rico</h1>
+				<h3>{data.hero.bio}</h3>
+			</div>
 		</section>
-		<div class="hero-tile me">
-			<h1><span class="text-accent">Fede</span>rico</h1>
-			<h3>{data.hero.bio}</h3>
-		</div>
+		
 
 		
 
@@ -59,6 +62,9 @@ import sloganImg from '../assets/images/my-slogan.svg';
 		padding: 1rem;
 		border: 1px solid var(--border-color);
         border-radius: var(--border-radius);
+
+		grid-column: 1 / span 2;
+        grid-row: 2 / span 2;
 	}
 
 	.hero-text {
@@ -82,13 +88,37 @@ import sloganImg from '../assets/images/my-slogan.svg';
 	}
 
 	.hero_container {
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		gap: 4px;
+		grid-template-columns: 10rem auto;
 	}
 
 	.section_container.card {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	@media all and (min-width: 768px) {
+		.hero_container {
+			display: grid;
+			grid-template-columns: auto auto;
+			gap: 12px;
+		}
+
+		.me {
+			grid-column: 1 / span 1;
+			grid-row: 1 / span 1;
+		}
+
+		.hero-quote {
+			grid-column: 1 / span 1;
+			grid-row: 2 / span 1;
+		}
+
+		.hero-img {
+			grid-column: 2 / span 1;
+			grid-row: 1 / span 2;
+		}
 	}
 </style>

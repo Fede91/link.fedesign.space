@@ -66,4 +66,21 @@ const {title, layout, items} = Astro.props;
         flex-wrap: nowrap;
     }
 
+    @media all and (min-width: 768px) {
+
+        .section_content.card {
+            overflow-x: initial;
+        }
+
+        .section_wrapper.card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .section_content.grid {
+            gap: 12px;
+        }
+    }
+
 </style>

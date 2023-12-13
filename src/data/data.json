@@ -13,9 +13,9 @@
       "layout": "row",
       "items": [
         {
-          "title": "Visit my portfolio",
+          "title": "My portfolio",
           "text": "fedesign.space",
-          "icon": "chat-bubble",
+          "icon": "shortcuts",
           "type": "link",
           "style": "primary",
           "url": "https://fedesign.space/"
