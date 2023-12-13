@@ -9,7 +9,7 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: "https://link.fedesign.space",
   integrations: [react(), sitemap(), robotsTxt()],
-  output: "hibrid",
+  output: "hybrid",
   adapter: vercel({
     webAnalytics: {
       enabled: true,
