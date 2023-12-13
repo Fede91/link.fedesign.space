@@ -1,0 +1,39 @@
+---
+import tileActionIcon from '../assets/icons/ph_arrow-up-right-thin.svg';
+import  {RoundedTile} from '../react/RoundedTile';
+import Link from './Link.astro';
+import RoundedCard from "./RoundedTile.astro";
+import SocialCard from './SocialCard.astro';
+
+interface Props {
+    title: string;
+    url: string;
+    img?: string;
+    type?: string;
+    style?: string;
+    description?: string;
+    icon?: string;
+    alias?: string;
+    text: string | null;
+}
+
+const {title, url, description, img, style, type, icon, text, alias} = Astro.props;
+
+---
+
+{
+  type === 'card' ?
+    <RoundedCard
+        icon={tileActionIcon.src}
+        link={url}
+        poster={img || ''}
+        description={title}
+    >
+        <RoundedTile fill={"var(--secondary-background-color)"} client:visible variant={"card"}/>
+    </RoundedCard>
+  : type === 'link' ?
+    <Link href={url} text={text} title={title} style={style} icon={icon}/>
+  : type === 'social-link' ?
+    <SocialCard  title={title} href={url} alias={alias} icon={icon}/>
+  : <div />
+}
