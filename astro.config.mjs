@@ -10,12 +10,5 @@ export default defineConfig({
   site: "https://link.fedesign.space",
   integrations: [react(), sitemap(), robotsTxt()],
   output: "hybrid",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-    speedInsights: {
-      enabled: true,
-    },
-  }),
+  adapter: vercel(),
 });
